@@ -33,13 +33,14 @@ While Dataplug focuses on efficient data slicing, Data Cockpit provides an **end
 2. **Browses** existing buckets or public datasets from the AWS Open Data Registry  
 3. **Runs benchmarks** across a configurable range of batch sizes to find the fastest throughput  
 4. **Processes & partitions** your data with one click, displaying progress and results entirely in-notebook  
+5. **Retrieves** partitions via `get_data_slices()`, which returns the DataPlug data slices (metadata) for downstream processing  
 
 ---
 
 ## Installation
 
 ```bash
-pip install data-cockpit
+pip install cloud-data-cockpit
 ```
 
 Or install both Data Cockpit and geospatial extras together:
