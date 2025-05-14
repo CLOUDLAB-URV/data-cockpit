@@ -1,28 +1,38 @@
 [project]
 name = "cloud-data-cockpit"
-version = "0.1.4"
+version = "0.1.6"
 description = "An IPython widget for browsing, benchmarking, and processing S3 datasets."
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-  { name = "Usama Benabdelkrim Zakan", email = "ubenabdev@gmail.com" }
+  { name = "Usama Benabdelkrim Zakan", email = "usama.benabdelkrim@urv.cat" }
 ]
 requires-python = ">=3.10"
 dependencies = [
   "boto3",
   "ipywidgets",
   "gql",
-  "cloud-dataplug[geospatial,metabolomics]",
+  "cloud-dataplug",
   "ipython",
   "requests_toolbelt",
+  "rasterio"
 ]
 
 [project.optional-dependencies]
-geospatial = ["cloud-dataplug[geospatial]"]
+geospatial = [
+  "cloud-dataplug[geospatial]",
+  "pdal"
+]
+metabolomics = [
+  "cloud-dataplug[metabolomics]"
+]
 
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -9,7 +9,7 @@ with open(os.path.join(here, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="cloud-data-cockpit",
-    version="0.1.4",
+    version="0.1.6",
     description="An interactive interface for selecting and partitioning data with Dataplug.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -30,11 +30,18 @@ setup(
         "boto3",
         "ipywidgets",
         "gql",
-        "cloud-dataplug[geospatial,metabolomics]",
+        "cloud-dataplug",
         "requests_toolbelt",
+        "rasterio"
     ],
     extras_require={
-        "geospatial": ["cloud-dataplug[geospatial]"],
+        "geospatial": [
+            "cloud-dataplug[geospatial]",
+            "pdal"
+        ],
+        "metabolomics": [
+            "cloud-dataplug[metabolomics]"
+        ]
     },
     python_requires=">=3.10",
     classifiers=[
