@@ -12,7 +12,7 @@ dependencies = [
   "boto3",
   "ipywidgets",
   "gql",
-  "cloud-dataplug[geospatial,metabolomics]",
+  "cloud-dataplug",
   "ipython",
   "requests_toolbelt",
 ]
