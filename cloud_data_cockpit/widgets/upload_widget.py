@@ -133,7 +133,7 @@ class UploadWidget:
                     ext = os.path.splitext(s3_uris[0])[1].lower()
                     if ext == ".tif":
                         self.batch_slider.description = "Splits"
-                    elif ext in [".csv", ".fastq", ".gz", ".fasta", ".las", ".laz", ".vcf"]:
+                    elif ext in [".csv", ".fastq", ".gz", ".fasta", ".ibd", ".las", ".laz", ".vcf"]:
                         self.batch_slider.description = "Num Chunks:"
                     else:
                         self.batch_slider.description = "Batch Size:"

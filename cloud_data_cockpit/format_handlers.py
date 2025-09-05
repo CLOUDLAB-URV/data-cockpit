@@ -14,12 +14,14 @@ from dataplug.formats.geospatial.laspc import (
 from dataplug.formats.genomics.fastq import FASTQGZip, partition_reads_batches
 from dataplug.formats.genomics.fasta import FASTA, partition_chunks_strategy as fasta_partitioner
 from dataplug.formats.genomics.vcf import VCF, partition_num_chunks as vcf_partitioner
+from dataplug.formats.metabolomics.imzml import ImzML, partition_chunks_strategy as ibd_partitioner
 
 FORMAT_MAP: Dict[str, Tuple] = {
     ".csv":   (CSV, csv_partition),
     ".fastq": (FASTQGZip, partition_reads_batches),
     ".gz":    (FASTQGZip, partition_reads_batches),
     ".fasta": (FASTA, fasta_partitioner),
+    ".ibd":   (ImzML, ibd_partitioner),
     ".las":   (LiDARPointCloud, las_partitioner),
     ".laz":   (CloudOptimizedPointCloud, copc_partitioner),
     ".vcf":   (VCF, vcf_partitioner),
